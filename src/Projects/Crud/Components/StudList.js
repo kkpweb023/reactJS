@@ -19,7 +19,7 @@ const StudList = () => {
     const {data,getData} = useContext(MyContext);
   
     function handleDelete(id){
-      axios.delete(`http://localhost:3100/students/${id}`)
+      axios.delete(`https://my-json-server.typicode.com/kkpweb023/myServer/students/${id}`)
       .then((value)=>{
               getData();
              console.log("Delete Successfully")

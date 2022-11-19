@@ -20,7 +20,7 @@ const View = () => {
     tempID.current = getData;
 
     function getData() {
-        axios.get(`http://localhost:3100/students/${id}`)
+        axios.get(`https://my-json-server.typicode.com/kkpweb023/myServer/students/${id}`)
             .then((value) => setDetail(value.data))
             .catch((error) => console.log('! 404 fetch failed'))
     }

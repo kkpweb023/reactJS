@@ -23,7 +23,7 @@ const AddStud = () => {
 
     function postData(){
 
-        axios.post('http://localhost:3100/students', {
+        axios.post('https://my-json-server.typicode.com/kkpweb023/myServer/students', {
           name: name,
           age: age,
           email: email
