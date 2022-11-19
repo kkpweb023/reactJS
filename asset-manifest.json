@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/reactJS/static/css/main.4180c78f.css",
+    "main.js": "/reactJS/static/js/main.bd0ddcd6.js",
+    "static/media/scatteredClouds.jpg": "/reactJS/static/media/scatteredClouds.c8fb089f5289706ce8db.jpg",
+    "static/media/WeatherPic2.JPG": "/reactJS/static/media/WeatherPic2.0b2647401620ab340250.JPG",
+    "static/media/error404-16.jpg": "/reactJS/static/media/error404-16.04876d5ebfbcc2ced46f.jpg",
+    "static/media/snowClouds.jpeg": "/reactJS/static/media/snowClouds.8104157c8b0fc47dc159.jpeg",
+    "static/media/HeadPic.png": "/reactJS/static/media/HeadPic.a025ee79307241571cfe.png",
+    "static/media/crudPic.JPG": "/reactJS/static/media/crudPic.1a7362537d16590eb7ed.JPG",
+    "static/media/rain.jpg": "/reactJS/static/media/rain.cfd375385d8e2f128d8c.jpg",
+    "static/media/TablePagi.JPG": "/reactJS/static/media/TablePagi.9467d141c8cfb64c3143.JPG",
+    "static/media/crudPic2.JPG": "/reactJS/static/media/crudPic2.b1bade2d9bf1c68045d9.JPG",
+    "static/media/WeatherPic.jpg": "/reactJS/static/media/WeatherPic.d2d4bdc796d5a3e8dfd4.jpg",
+    "static/media/brokenCloud.jpg": "/reactJS/static/media/brokenCloud.4f2e65c76840771f9a77.jpg",
+    "static/media/ClearPic.jpg": "/reactJS/static/media/ClearPic.ccce080a456d89354c9f.jpg",
+    "static/media/ExPic.JPG": "/reactJS/static/media/ExPic.76ec04571dda11e21e84.JPG",
+    "static/media/WeatherPic3.JPG": "/reactJS/static/media/WeatherPic3.38dbd51118d9d04ea881.JPG",
+    "static/media/thunderstorm.jpg": "/reactJS/static/media/thunderstorm.470b5ba96ea414c488ec.jpg",
+    "static/media/TablePagi2.JPG": "/reactJS/static/media/TablePagi2.81c0114eb830873d2a0b.JPG",
+    "index.html": "/reactJS/index.html",
+    "main.4180c78f.css.map": "/reactJS/static/css/main.4180c78f.css.map",
+    "main.bd0ddcd6.js.map": "/reactJS/static/js/main.bd0ddcd6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4180c78f.css",
+    "static/js/main.bd0ddcd6.js"
+  ]
+}
