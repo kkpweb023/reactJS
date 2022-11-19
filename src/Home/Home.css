@@ -1,0 +1,24 @@
+
+.ExPic_div > img{
+
+   height: 140px; 
+   width: 95%;
+   margin-top: 10px;
+   margin-left:2%;
+   margin-bottom: 20px;
+
+}
+
+
+.ExPic_div > :nth-child(2){
+    
+
+    font-size: 30px;
+    text-align: center;
+    color: rgb(104, 104, 212);
+    font-weight: lighter;
+    margin-bottom: 20px;
+
+    
+ 
+ }

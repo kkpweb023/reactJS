@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+/*======================= Search Bar ============================*/
+
+
+.search_pagi_div{
+
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+   
+}
+
+.search-input{
+
+    outline: none;
+    border-top-left-radius:5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid rgb(99, 97, 97);
+    padding-left:8px;
+    font-size: 15px;
+       
+}
+
+.search-input:focus{
+
+    border: 2px solid rgb(49, 106, 231);
+}
+
+
+
+
+.search_btn{
+
+    background-color: black;
+    border-radius: initial;
+    margin-right:7px;
+    font-size: 11px;
+    padding: 4px 20px;
+    font-weight:700;
+    color: white;
+
+}
+
+
+.reset_btn{
+
+    background-color: rgb(6, 107, 173);
+    border-radius:3px;
+    padding: 4px 20px;
+    font-weight:600;
+    font-size: 13px;
+    color: white;
+      
+
+}
+
+
+
+
+@media (max-width:500px) {
+
+
+    .reset_btn{
+
+        margin-top: 10px;
+        padding-top: 4px;
+        width: 260px;
+
+    }
+    
+}

@@ -1,0 +1,40 @@
+
+.head_image{
+
+     width:40px;
+     position: relative;
+     left: 3%;
+     margin-top:-5px;
+     margin-bottom: 6px;
+
+}
+
+.head_img_div > :nth-child(2){
+ 
+    position: relative;
+    left:3%;
+    top: 5px;
+
+}
+
+
+
+.head_img_div > :nth-child(2) > :nth-child(1){
+ 
+
+    font-weight:600;
+    font-size:25px;
+    color: rgb(109, 13, 58);
+
+    font-family:cursive
+}
+
+.head_img_div > :nth-child(2) > :nth-child(2){
+
+    font-size: 30px;
+    
+    font-family:cursive;
+    color: rgb(82, 51, 20);
+
+
+}

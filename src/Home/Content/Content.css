@@ -1,0 +1,118 @@
+.Content_div {
+  padding: 50px 30px 30px 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Content_div > div {
+  border-radius: 10px;
+  width: 350px;
+  height: 220px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  transition: all 0s ease 0s;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-duration: 4s;
+
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: ease;
+}
+
+.Content_div > div > :first-child {
+  display: none;
+}
+
+.Content_div > div:hover {
+  border: 2px solid rgba(0, 139, 139, 0.97);
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+  animation: none;
+}
+
+.Content_div > div:hover > :first-child {
+  font-size: 70px;
+  font-weight: lighter;
+  text-decoration-line: none;
+  text-align: center;
+  display: block;
+  backdrop-filter: blur(5px);
+  padding: 52px 0px 58px 0px;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  text-shadow: 1px 1px #0066ff;
+  color:red
+}
+
+
+/*=================== Weather link ============================*/
+
+.weather {
+  background-image: url("../../Images/WeatherPic.jpg");
+  background-position: center;
+  animation-name: weather;
+}
+
+@keyframes weather {
+      0% {
+          background-image: url("../../Images/WeatherPic.jpg");
+        }
+      40% {
+        background-image: url("../../Images/WeatherPic2.JPG");
+      }
+      100% {
+            background-image: url("../../Images/WeatherPic3.JPG");
+          }
+}     
+
+/*=================== TablePagi link ============================*/
+
+.tablePagi{
+  background-image: url("../../Images/TablePagi.JPG");
+  background-position:left; 
+  animation-name: table;
+}
+@keyframes table {
+      0% {
+          background-image: url("../../Images/TablePagi.JPG");
+        }
+      70% {
+        background-image: url("../../Images/TablePagi2.JPG");
+      }
+      100% {
+            background-image: url("../../Images/TablePagi.JPG");
+          }
+}     
+
+
+
+
+
+
+/*=================== crud link ============================*/
+
+.crud {
+  background-image: url("../../Images/crudPic.JPG");
+  background-position:left; 
+  animation-name: crud;
+}
+@keyframes crud{
+      0% {
+          background-image: url("../../Images/crudPic.JPG");
+        }
+      70% {
+        background-image: url("../../Images/crudPic2.JPG");
+      }
+      100% {
+            background-image: url("../../Images/crudPic.JPG");
+          }
+}     

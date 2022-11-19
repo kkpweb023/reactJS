@@ -1,0 +1,274 @@
+
+*{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+   
+    
+}
+
+
+/*======== Weather_div ========*/
+
+
+.Weather_div{
+
+
+    border-top: 0.1px solid rgba(103, 219, 219, 0.97);
+    background-color: rgb(189, 192, 194);
+    width: 100%;
+    height:719px;
+    position: relative;
+    left:0%;
+    top:0px;
+
+
+    
+}
+
+
+
+/*======== Search_div ========*/
+
+
+.search_div{
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+
+}
+.search_div > .InputGroup{
+
+      margin-left:30%;
+}
+.search_div > .InputGroup > .btn{
+
+    background-color: rgb(185, 151, 167);
+    color: rgb(83, 10, 46);
+    
+}
+
+.InputGroupBTN> .Cf_btn{
+
+    background-color: rgb(67, 155, 16); 
+    color: rgb(83, 10, 46);   
+    margin-left: 20%;
+    font-weight: bold;
+
+}
+
+
+
+
+/*======== WeatherContent_div ========*/
+
+.WeatherContent_div{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding-top:20px;
+    padding-bottom:20px;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    color: white;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
+
+
+}
+
+
+
+/*======== CityDateTime_div ========*/
+
+
+.CityDateTime_div{
+
+    text-align: center;
+    margin-top:5px;
+    line-height:20px;
+    color:whitesmoke;
+
+      
+}
+
+.CityDateTime_div > :first-child{
+
+     font-size: 43px;
+     font-weight: bold;
+     margin-bottom:28px;
+}
+
+.CityDateTime_div > :nth-child(2){
+
+    font-size: 22px;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+
+.CityDateTime_div > :last-child{
+
+    font-size: 20px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+
+
+
+
+/*======== Icon_div ========*/
+
+.icon_div{
+
+     margin-top: 10px;
+     padding-left:5%;
+     padding-right:5%;
+     display: flex;
+     justify-content:space-around;
+}
+
+.icon_div >.icon > img{
+
+     width: 100px;
+     height: 100px;
+     margin-bottom: 10px;
+}
+
+
+.icon_div >.icon > :last-child{
+
+   font-weight: bold;
+   margin-left: 10px;
+}
+
+
+
+
+
+/*======== Temp_div ========*/
+
+
+.Temp_div{
+    font-size: 15px;
+    margin-left:10%;
+}
+
+
+.Temp_div  > :first-child{
+
+    font-size:60px;
+    font-weight: 800;
+    font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+    font-stretch: expanded;
+ 
+ }
+
+ .Temp_div > :nth-child(2) {
+    margin-right:5px; 
+ }
+
+ .Temp_div > :nth-child(2) > :nth-child(2) {
+    margin: 0px 5px 0px 5px;  
+    font-weight: bold;
+ }
+
+ .Temp_div > :nth-child(3) {
+    margin-left:5px; 
+ }
+
+ .Temp_div > :nth-child(3) > :nth-child(2) {
+    margin-left:5px; 
+    font-weight: bold;
+ }
+
+
+/* ========================== Pressure/Humidity/Wind ============================ */
+
+
+.PhWind_div{
+
+    background-color:rgba(235, 192, 192, 0.2);
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+ 
+/*=============pressure==========*/
+
+.PhWind_div > .Pressure_div{
+
+    line-height: 40px;
+    text-align: center;
+    padding: 4%;
+
+}
+ 
+.PhWind_div > .Pressure_div >:first-child{
+
+
+    font-size: 17px;
+
+}
+
+.PhWind_div > .Pressure_div >:last-child{
+    font-size:25px;
+    font-weight: bold;
+
+}
+
+/*=============Humidity==========*/
+
+.PhWind_div > .Humidity_div{
+
+    line-height: 40px;
+    text-align: center;
+    padding: 4%;
+
+}
+ 
+.PhWind_div > .Humidity_div >:first-child{
+
+
+    font-size: 17px;
+
+}
+
+.PhWind_div > .Humidity_div >:last-child{
+    font-size:25px;
+    font-weight: bold;
+
+}
+
+
+/*=============Wind==========*/
+
+.PhWind_div > .Wind_div{
+
+    line-height: 40px;
+    text-align: center;
+    padding: 5%;
+
+}
+ 
+.PhWind_div > .Wind_div >:first-child{
+
+
+    font-size: 17px;
+
+}
+
+.PhWind_div > .Wind_div >:last-child{
+    font-size:25px;
+    font-weight: bold;
+
+}
+
+
+
