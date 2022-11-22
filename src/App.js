@@ -24,7 +24,7 @@ const App = () => {
             <Head />
             <NavBar />
   
-          <Routes>
+          <Routes basename="/reactJS">
             <Route exact path='/' element={<Home/>} />
             <Route path='/weather' element={<WeatherAPP />} />
             <Route path='/tablePagi' element={<PaginateAPP />} />
