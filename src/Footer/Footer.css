@@ -1,0 +1,17 @@
+
+.footer_info > .link{
+    text-decoration: none;
+    margin-left: "2px";
+    color: rgb(114, 196, 243);
+    margin-left: 20px;
+
+}
+
+@media (max-width:500px) {
+
+    .footer_info > .link{
+  
+        display: block;
+    }
+    
+}

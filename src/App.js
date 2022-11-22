@@ -10,6 +10,7 @@ import PaginateAPP from './Projects/Pagination/PaginateAPP';
 import CrudAPP from './Projects/Crud/CrudAPP';
 import View from './Projects/Crud/Components/View';
 import Edit from './Projects/Crud/Components/Edit';
+import Footer from './Footer/Footer';
 
 
 const App = () => {
@@ -43,6 +44,8 @@ const App = () => {
             <Route path='/*' element={<h1><img src={pic} style={{ width: "100%",height:"70vh" }} alt='' /><Link to={'/'}>Back to home page</Link></h1>} />
 
           </Routes>
+
+          <Footer />
     </div>
   )
 }
