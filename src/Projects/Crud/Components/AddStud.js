@@ -6,8 +6,6 @@ import axios from 'axios';
 import { MyContext } from '../CrudAPP';
 
 
-
-
 const AddStud = () => {
     const classes = addStyle();
 
@@ -18,12 +16,8 @@ const AddStud = () => {
   const [age, setAge] = useState('');
   const [email, setEmail] = useState('');
 
-
-
-
     function postData(){
-
-        axios.post('https://my-json-server.typicode.com/kkpweb023/myServer/students', {
+        axios.post('https://my-json-server.typicode.com/kkpweb023/myServer/students/', {
           name: name,
           age: age,
           email: email
@@ -44,12 +38,6 @@ const AddStud = () => {
   
   
   
-    
-
-
-
-
-
     return (
         <>
             <Grid item md={6} xs={12} >
@@ -75,7 +63,6 @@ const AddStud = () => {
                             />
 
                         </Grid>
-
 
                         <Grid item xs={12}>
                             <TextField

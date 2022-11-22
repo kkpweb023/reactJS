@@ -9,7 +9,7 @@ const Footer = () => {
 
     return (
 
-        <footer className="text-center text-white" style={{backgroundColor:"rgba(30, 30, 37,0.8)"}}>
+        <footer className="text-center text-white" style={{backgroundColor:"rgba(30, 30, 37,0.8)",marginTop:"80px"}}>
 
             <div className="container p-4">
 

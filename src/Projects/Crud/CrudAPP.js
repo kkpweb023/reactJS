@@ -6,7 +6,6 @@ import StudList from './Components/StudList';
 import AddStud from './Components/AddStud';
 import axios from 'axios';
 
-
 export const MyContext = createContext();
 
 
@@ -16,10 +15,10 @@ const CrudAPP = () => {
 
     const [data, setData] = useState([]);
 
-    function getData() {
-      axios.get('https://my-json-server.typicode.com/kkpweb023/myServer/students')
+    async function getData() {
+      axios.get(`https://my-json-server.typicode.com/kkpweb023/myServer/students`)
         .then((value,index) => setData(value.data))
-        .catch((error) => console.log('! 404 fetch failed'))
+        .catch((error) => console.log('! 404 fetch failed')) 
     }
     useEffect(() => {
       getData();
