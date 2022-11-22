@@ -5,13 +5,10 @@ import { addStyle } from './MaterialCSS';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-
-
 const Edit = () => {
 
     const navigate = useNavigate();
     const classes = addStyle();
-
     const { info } = useParams();
 
     let [edit, setEdit] = useState({
@@ -33,12 +30,9 @@ const Edit = () => {
         tempID.current();
     }, [])
 
-
-
     function getEdit(){
 
         axios.put(`https://my-json-server.typicode.com/kkpweb023/myServer/students/${info}`,{
-
               id:info,
               name:edit.name,
               age:edit.age,
@@ -51,13 +45,10 @@ const Edit = () => {
         .catch((error)=>console.log('! 404 update failed'));
   }
 
-
    function handleEdit(){
     getEdit();
     navigate('/crud');
    }
-
-
 
     return (
         <div style={{margin:"0px 5px"}}>
@@ -75,7 +66,6 @@ const Edit = () => {
                             <Grid item xs={12} md={6}>
                                 <TextField label="ID" variant="outlined" autoComplete='stuid' name='stuid' id='stuid' value={info} disabled fullWidth />
                             </Grid>
-
 
                             <Grid item xs={12} md={6}>
                                 <TextField 
@@ -123,8 +113,6 @@ const Edit = () => {
                                 />
                             </Grid>
 
-
-
                             <Grid item xs={12} md={6}>
                                 <Button
                                     variant="contained"
@@ -132,12 +120,9 @@ const Edit = () => {
                                     fullWidth
                                     sx={{padding: "4px 0px" }}
                                     onClick={handleEdit}
-               
-
                                 >UPDATE</Button>
                             </Grid>
                         </Grid>
-
                     </form>
                 </Grid>
 

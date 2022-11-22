@@ -4,17 +4,11 @@ import { listStyle } from './MaterialCSS';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-
-
-
-
 const View = () => {
 
     const classes = listStyle();
     const { id } = useParams();
-
     let [detail, setDetail] = useState([])
-
 
     const tempID = useRef();
     tempID.current = getData;
@@ -28,13 +22,10 @@ const View = () => {
         tempID.current();
     }, [])
 
-
-
     const navigate = useNavigate();
 
     return (
         <>
-
             <Grid container justifyContent="center">
 
                 <Grid item xs={12} m={1}>
@@ -45,30 +36,27 @@ const View = () => {
                     <TableContainer component={Paper}>
                         <Table>
                             <TableHead>
-
                                 <TableRow style={{ backgroundColor: "#616161" }}>
-                                    <TableCell align='center' style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>ID</TableCell>
+                                    <TableCell align='center' padding={'none'} style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>ID</TableCell>
                                     <TableCell align='center' style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>Name</TableCell>
                                     <TableCell align='center' style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>Age</TableCell>
-                                    <TableCell align='center' style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>Email</TableCell>
+                                    <TableCell align='center' padding={'none'} style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>Email</TableCell>
                                 </TableRow>
 
                             </TableHead>
 
                             <TableBody>
-
                                 <TableRow>
                                     <TableCell align='center'>{detail.id}</TableCell>
                                     <TableCell align='center'>{detail.name}</TableCell>
                                     <TableCell align='center'>{detail.age}</TableCell>
-                                    <TableCell align='center'>{detail.email}</TableCell>
+                                    <TableCell align='center' padding={'none'}>{detail.email}</TableCell>
                                 </TableRow>
 
                             </TableBody>
 
                         </Table>
                     </TableContainer>
-
                 </Grid>
 
                 <Grid item mt={2} >
