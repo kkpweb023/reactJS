@@ -11,13 +11,15 @@ import { purple, red } from "material-colors";
 import { Link } from 'react-router-dom';
 import { MyContext } from '../CrudAPP';
 import axios from 'axios';
-import '../CrudAPP.css'
+import '../CrudAPP.css';
+import { ThreeDots } from 'react-loader-spinner';
+
 
 
 const StudList = () => {
     const classes = listStyle();
 
-    const { data, getData } = useContext(MyContext);
+    const { data, getData,isLoading } = useContext(MyContext);
 
     function handleDelete(id) {
         axios.delete(`https://my-json-server.typicode.com/kkpweb023/myServer/students/1`)
@@ -29,10 +31,8 @@ const StudList = () => {
 
     }
 
-
     return (
         <>
-
             <Grid item md={6} xs={12} >
 
                 <Box textAlign={'center'} className={classes.heading} p={1}>
@@ -42,67 +42,73 @@ const StudList = () => {
                 <TableContainer component={Paper}>
 
                     <Table>
-
                         <TableHead>
-
                             <TableRow style={{ backgroundColor: "#616161" }} >
-                                <TableCell align='center'  style={{ color: "white" }}>No</TableCell>
+                                <TableCell align='center' style={{ color: "white" }}>No</TableCell>
                                 <TableCell align='center' padding='none' style={{ color: "white" }}>Name</TableCell>
                                 <TableCell align='center' padding='none' style={{ color: "white" }}>Age</TableCell>
                                 <TableCell align='center' padding='none' style={{ color: "white" }}>Email</TableCell>
                                 <TableCell align='center' padding='none' style={{ color: "white" }}>Action</TableCell>
                             </TableRow>
-
                         </TableHead>
 
-                        <TableBody>
-                            {
-                                data.map((value, index) =>
+                        {isLoading ?<div style={{marginLeft:"30%"}}>
+                            <ThreeDots
+                               height="80" 
+                               width="80" 
+                               radius="9"
+                               color="#4fa94d" 
+                               ariaLabel="three-dots-loading"
+                               wrapperStyle={{}}
+                               wrapperClassName=""
+                               visible={true}
+                            /></div>
+                            :
+                            <TableBody>
+                                {
+                                    data.map((value, index) =>
 
-                                    <TableRow key={index}>
-                                        <TableCell align='center' padding="none">{value.id}</TableCell>
-                                        <TableCell align='center' padding="none">{value.name}</TableCell>
-                                        <TableCell align='center' padding="none">{value.age}</TableCell>
-                                        <TableCell align='center' padding="none">{value.email}</TableCell>
+                                        <TableRow key={index}>
+                                            <TableCell align='center' padding="none">{value.id}</TableCell>
+                                            <TableCell align='center' padding="none">{value.name}</TableCell>
+                                            <TableCell align='center' padding="none">{value.age}</TableCell>
+                                            <TableCell align='center' padding="none">{value.email}</TableCell>
 
-                                        <TableCell align='center' padding="none">
+                                            <TableCell align='center' padding="none">
 
-                                            <Tooltip title="View" >
-                                                <IconButton>
-                                                    <Link to={`/crud/view/${value.id}`}>
-                                                        <VisibilityIcon fontSize="small" color="primary"></VisibilityIcon>
-                                                    </Link>
-                                                </IconButton>
-                                            </Tooltip>
+                                                <Tooltip title="View" >
+                                                    <IconButton>
+                                                        <Link to={`/crud/view/${value.id}`}>
+                                                            <VisibilityIcon fontSize="small" color="primary"></VisibilityIcon>
+                                                        </Link>
+                                                    </IconButton>
+                                                </Tooltip>
 
+                                                <Tooltip title="Edit">
+                                                    <IconButton>
+                                                        <Link to={`/crud/edit/${value.id}`}>
+                                                            <EditIcon fontSize="small" sx={{ color: purple[800] }}></EditIcon>
+                                                        </Link>
+                                                    </IconButton>
+                                                </Tooltip>
 
-                                            <Tooltip title="Edit">
-                                                <IconButton>
-                                                    <Link to={`/crud/edit/${value.id}`}>
-                                                        <EditIcon fontSize="small" sx={{ color: purple[800] }}></EditIcon>
-                                                    </Link>
-                                                </IconButton>
-                                            </Tooltip>
-
-
-
-                                            <Tooltip title="Delete">
-                                                <IconButton onClick={() => handleDelete(value.id)}>
-                                                    <DeleteIcon
-                                                        fontSize="small"
-                                                        sx={{ color: red[700] }}
-                                                    ></DeleteIcon>
-                                                </IconButton>
-                                            </Tooltip>
-                                        </TableCell>
-                                    </TableRow>
-                                )}
-                        </TableBody>
+                                                <Tooltip title="Delete">
+                                                    <IconButton onClick={() => handleDelete(value.id)}>
+                                                        <DeleteIcon
+                                                            fontSize="small"
+                                                            sx={{ color: red[700] }}
+                                                        ></DeleteIcon>
+                                                    </IconButton>
+                                                </Tooltip>
+                                            </TableCell>
+                                        </TableRow>
+                                    )}
+                            </TableBody>
+                        }
                     </Table>
                 </TableContainer>
             </Grid>
         </>
     )
 }
-
 export default StudList;
