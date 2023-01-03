@@ -17,12 +17,12 @@ const AddStud = () => {
   const [email, setEmail] = useState('');
 
     function postData(){
-        axios.post('https://my-json-server.typicode.com/kkpweb023/myServer/students/', {
+        axios.post('http://localhost:4000/studentsAdd', {
           name: name,
           age: age,
           email: email
         })
-          .then((result) => console.log("Post Successfully"))
+          .then((result) => alert("Post Successfully"))
           .catch((error) => console.log("! 404 data not found"))
       }
 

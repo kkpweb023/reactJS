@@ -20,11 +20,10 @@ const CrudAPP = () => {
 
       setLoading(true);
 
-      axios.get(`https://my-json-server.typicode.com/kkpweb023/myServer/students`)
+      axios.get(`http://localhost:4000/studentList`)
         .then((value,index) => {
                  setData(value.data);
                  setLoading(false);
-                 
               })
         .catch((error) => console.log('! 404 fetch failed')) 
     }

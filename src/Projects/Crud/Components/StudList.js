@@ -22,13 +22,17 @@ const StudList = () => {
     const { data, getData,isLoading } = useContext(MyContext);
 
     function handleDelete(id) {
-        axios.delete(`https://my-json-server.typicode.com/kkpweb023/myServer/students/1`)
+        axios.delete(`http://localhost:4000/delete-student/${id}`)
             .then((value) => {
+                if(value.data.deletedCount === 1){
+                    alert("Delete Successfully");
+                    
+                }else if(value.data.deletedCount === 0){
+                    alert("not record for deletion");  
+                }
                 getData();
-                console.log("Delete Successfully")
             })
             .catch((error) => console.log('! process failed'))
-
     }
 
     return (
@@ -40,7 +44,6 @@ const StudList = () => {
                 </Box>
 
                 <TableContainer component={Paper}>
-
                     <Table>
                         <TableHead>
                             <TableRow style={{ backgroundColor: "#616161" }} >
@@ -52,7 +55,7 @@ const StudList = () => {
                             </TableRow>
                         </TableHead>
 
-                        {isLoading ?<div style={{marginLeft:"30%"}}>
+                        {isLoading ?
                             <ThreeDots
                                height="80" 
                                width="80" 
@@ -62,14 +65,14 @@ const StudList = () => {
                                wrapperStyle={{}}
                                wrapperClassName=""
                                visible={true}
-                            /></div>
+                            />
                             :
                             <TableBody>
                                 {
                                     data.map((value, index) =>
 
                                         <TableRow key={index}>
-                                            <TableCell align='center' padding="none">{value.id}</TableCell>
+                                            <TableCell align='center' padding="none">{index +1}</TableCell>
                                             <TableCell align='center' padding="none">{value.name}</TableCell>
                                             <TableCell align='center' padding="none">{value.age}</TableCell>
                                             <TableCell align='center' padding="none">{value.email}</TableCell>
@@ -78,7 +81,7 @@ const StudList = () => {
 
                                                 <Tooltip title="View" >
                                                     <IconButton>
-                                                        <Link to={`/crud/view/${value.id}`}>
+                                                        <Link to={`/crud/view/${value._id}`}>
                                                             <VisibilityIcon fontSize="small" color="primary"></VisibilityIcon>
                                                         </Link>
                                                     </IconButton>
@@ -86,14 +89,14 @@ const StudList = () => {
 
                                                 <Tooltip title="Edit">
                                                     <IconButton>
-                                                        <Link to={`/crud/edit/${value.id}`}>
+                                                        <Link to={`/crud/edit/${value._id}`}>
                                                             <EditIcon fontSize="small" sx={{ color: purple[800] }}></EditIcon>
                                                         </Link>
                                                     </IconButton>
                                                 </Tooltip>
 
                                                 <Tooltip title="Delete">
-                                                    <IconButton onClick={() => handleDelete(value.id)}>
+                                                    <IconButton onClick={() => handleDelete(value._id)}>
                                                         <DeleteIcon
                                                             fontSize="small"
                                                             sx={{ color: red[700] }}

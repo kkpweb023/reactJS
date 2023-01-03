@@ -22,7 +22,7 @@ const Edit = () => {
     tempID.current = getData;
 
     function getData(){
-        axios.get(`https://my-json-server.typicode.com/kkpweb023/myServer/students/${info}`)
+        axios.get(`http://localhost:4000/studentView/${info}`)
             .then((value) => setEdit(value.data))
             .catch((error) => console.log('! 404 fetch failed'))
     }
@@ -32,7 +32,7 @@ const Edit = () => {
 
     function getEdit(){
 
-        axios.put(`https://my-json-server.typicode.com/kkpweb023/myServer/students/${info}`,{
+        axios.put(`http://localhost:4000/studentEdit/${info}`,{
               id:info,
               name:edit.name,
               age:edit.age,
@@ -40,7 +40,7 @@ const Edit = () => {
         })
         .then((value)=>{
           getData();
-          console.log('Update Successfully');
+          alert('Update Successfully');
       })
         .catch((error)=>console.log('! 404 update failed'));
   }
