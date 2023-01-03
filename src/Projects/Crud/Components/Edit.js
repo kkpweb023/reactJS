@@ -12,16 +12,15 @@ const Edit = () => {
     const { info } = useParams();
 
     let [edit, setEdit] = useState({
-
-        name:"",
-        age:'',
-        email:''
-  })
+        name: "",
+        age: '',
+        email: ''
+    })
 
     const tempID = useRef();
     tempID.current = getData;
 
-    function getData(){
+    function getData() {
         axios.get(`http://localhost:4000/studentView/${info}`)
             .then((value) => setEdit(value.data))
             .catch((error) => console.log('! 404 fetch failed'))
@@ -30,28 +29,32 @@ const Edit = () => {
         tempID.current();
     }, [])
 
-    function getEdit(){
+    function getEdit() {
 
-        axios.put(`http://localhost:4000/studentEdit/${info}`,{
-              id:info,
-              name:edit.name,
-              age:edit.age,
-              email:edit.email       
+        axios.put(`http://localhost:4000/studentEdit/${info}`, {
+            id: info,
+            name: edit.name,
+            age: edit.age,
+            email: edit.email
         })
-        .then((value)=>{
-          getData();
-          alert('Update Successfully');
-      })
-        .catch((error)=>console.log('! 404 update failed'));
-  }
+            .then((value) => {
+                if (value.data.modifiedCount === 1) {
+                    alert('Update Successfully');
+                    navigate('/crud');
+                    getData();
+                } else if (value.data.modifiedCount === 0) {
+                    alert('Update atlist one field');
+                }
+            })
+            .catch((error) => console.log('! 404 update failed'));
+    }
 
-   function handleEdit(){
-    getEdit();
-    navigate('/crud');
-   }
+    function handleEdit() {
+        getEdit();
+    }
 
     return (
-        <div style={{margin:"0px 5px"}}>
+        <div style={{ margin: "0px 5px" }}>
 
             <Grid container justifyContent={'center'} spacing={4} mt={2}>
 
@@ -68,48 +71,42 @@ const Edit = () => {
                             </Grid>
 
                             <Grid item xs={12} md={6}>
-                                <TextField 
-                                    label="Name" 
-                                    variant="outlined" 
-                                    autoComplete='stuname' 
-                                    name='stuname' 
-                                    id='stuname' 
-                                    required 
+                                <TextField
+                                    label="Name"
+                                    variant="outlined"
+                                    autoComplete='stuname'
+                                    name='stuname'
+                                    id='stuname'
+                                    required
                                     fullWidth
-                                    value={edit.name}  
-                                    onChange={(e)=>setEdit({...edit,name:e.target.value})}
-                                   
-                                    
-                                    />
-                            </Grid>
-
-                            <Grid item xs={12} md={6}>
-                                <TextField 
-                                    label="Age" 
-                                    variant="outlined" 
-                                    autoComplete='stuage' 
-                                    name='stuage' 
-                                    required 
-                                    fullWidth
-                                    value={edit.age} 
-                                    onChange={(e)=>setEdit({...edit,age:e.target.value})}
-                                   
-                                    
+                                    value={edit.name}
+                                    onChange={(e) => setEdit({ ...edit, name: e.target.value })}
                                 />
                             </Grid>
 
                             <Grid item xs={12} md={6}>
-                                <TextField 
-                                    label="Email" 
-                                    variant="outlined" 
-                                    autoComplete='stuemail' 
-                                    name='stuemail' 
-                                    required 
+                                <TextField
+                                    label="Age"
+                                    variant="outlined"
+                                    autoComplete='stuage'
+                                    name='stuage'
+                                    required
                                     fullWidth
-                                    value={edit.email} 
-                                    onChange={(e)=>setEdit({...edit,email:e.target.value})}
-                                   
-                                   
+                                    value={edit.age}
+                                    onChange={(e) => setEdit({ ...edit, age: e.target.value })}
+                                />
+                            </Grid>
+
+                            <Grid item xs={12} md={6}>
+                                <TextField
+                                    label="Email"
+                                    variant="outlined"
+                                    autoComplete='stuemail'
+                                    name='stuemail'
+                                    required
+                                    fullWidth
+                                    value={edit.email}
+                                    onChange={(e) => setEdit({ ...edit, email: e.target.value })}
                                 />
                             </Grid>
 
@@ -118,21 +115,19 @@ const Edit = () => {
                                     variant="contained"
                                     color='primary'
                                     fullWidth
-                                    sx={{padding: "4px 0px" }}
+                                    sx={{ padding: "4px 0px" }}
                                     onClick={handleEdit}
                                 >UPDATE</Button>
                             </Grid>
                         </Grid>
                     </form>
                 </Grid>
-
+                
             </Grid>
 
             <Box textAlign={'center'} p={2} ml={2}>
                 <Button variant="contained" onClick={() => navigate('/crud')}>BACK TO HOME</Button>
             </Box>
-
-
         </div>
     )
 }
